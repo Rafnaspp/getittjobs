@@ -1,9 +1,13 @@
+'use client'
+
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'next/navigation';
+import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const ReportViewer = () => {
-  const { reportId } = useParams();
+  const params = useParams();
+  const reportId = params?.reportId as string;
   const googleDriveFileId = "1EH2c8dosAKpJiOHE1tIeUF-3V2YFqT5l";
   const embedUrl = `https://docs.google.com/viewer?url=https://drive.google.com/uc?export=download%26id=${googleDriveFileId}&embedded=true`;
 
@@ -12,7 +16,7 @@ const ReportViewer = () => {
       <div className="container mx-auto px-4">
         <div className="mb-6">
           <Link 
-            to="/" 
+            href="/" 
             className="inline-flex items-center text-gray-600 hover:text-teal-600 transition-colors"
           >
             <ArrowLeft size={20} className="mr-2" />

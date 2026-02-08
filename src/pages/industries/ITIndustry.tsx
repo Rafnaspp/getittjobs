@@ -1,6 +1,6 @@
 import React from 'react';
 import { Server, Code, Globe, Shield, Cpu } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ITIndustry = () => {
   return (
@@ -198,7 +198,7 @@ const ITIndustry = () => {
             Let's discuss how we can help you find and hire the best IT talent for your organization.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-white text-teal-600 hover:bg-teal-50 font-medium px-8 py-3 rounded-full inline-block transition-all duration-300"
           >
             Schedule a Consultation

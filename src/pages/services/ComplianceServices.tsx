@@ -1,6 +1,6 @@
 import React from 'react';
 import { Shield, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const ComplianceServices = () => {
   return (
@@ -96,7 +96,7 @@ const ComplianceServices = () => {
             Partner with us to maintain compliant and ethical recruitment processes that protect your organization and enhance your hiring success.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-white text-teal-600 hover:bg-teal-50 font-medium px-8 py-3 rounded-full inline-block transition-all duration-300"
           >
             Schedule a Consultation

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search, CheckCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const RecruitmentServices = () => {
   return (
@@ -96,7 +96,7 @@ const RecruitmentServices = () => {
             Partner with us to access top talent and streamline your hiring process with our comprehensive recruitment solutions.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-white text-teal-600 hover:bg-teal-50 font-medium px-8 py-3 rounded-full inline-block transition-all duration-300"
           >
             Get Started Today

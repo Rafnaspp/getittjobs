@@ -1,6 +1,6 @@
 import React from 'react';
 import { Building, LineChart, Shield, Users } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const BankingIndustry = () => {
   return (
@@ -198,7 +198,7 @@ const BankingIndustry = () => {
             Partner with us to build a skilled team ready for the future of banking and finance.
           </p>
           <Link
-            to="/contact"
+            href="/contact"
             className="bg-white text-teal-600 hover:bg-teal-50 font-medium px-8 py-3 rounded-full inline-block transition-all duration-300"
           >
             Schedule a Consultation
