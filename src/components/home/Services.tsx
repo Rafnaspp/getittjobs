@@ -1,6 +1,6 @@
 import React from 'react';
 import { Users, FileCheck, Search } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface ServiceCardProps {
   icon: React.ReactNode;
@@ -10,7 +10,7 @@ interface ServiceCardProps {
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description, link }) => (
-  <Link to={link} className="block">
+  <Link href={link} className="block">
     <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-b-4 border-teal-600 h-full">
       <div className="bg-gradient-to-br from-teal-50 to-blue-50 w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center mb-6 text-teal-600 transform rotate-3">
         {icon}

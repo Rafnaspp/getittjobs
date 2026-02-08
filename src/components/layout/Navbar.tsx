@@ -1,12 +1,15 @@
+'use client'
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const isHomePage = location.pathname === '/';
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +19,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close menu when location changes
+  // Close menu when pathname changes
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   const navbarClasses = `fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
     scrolled 
@@ -44,7 +47,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            <Link to="/" className="flex flex-col" onClick={handleLinkClick}>
+            <Link href="/" className="flex flex-col" onClick={handleLinkClick}>
               <span className="text-4xl md:text-5xl font-black tracking-tighter leading-none">
                 <span className="bg-gradient-to-r from-blue-600 via-teal-600 to-blue-600 bg-clip-text text-transparent">GET</span>
                 <span className="bg-gradient-to-r from-yellow-500 via-yellow-600 to-yellow-500 bg-clip-text text-transparent">ITT</span>
@@ -57,7 +60,7 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className={linkClasses}>
+            <Link href="/" className={linkClasses}>
               Home
             </Link>
             <div className="relative group">
@@ -66,13 +69,13 @@ const Navbar = () => {
                 <ChevronDown size={16} className="ml-1" />
               </button>
               <div className={dropdownClasses}>
-                <Link to="/services/staffing" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/services/staffing" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Staffing
                 </Link>
-                <Link to="/services/recruitment-services" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/services/recruitment-services" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Recruitment
                 </Link>
-                <Link to="/services/compliance-services" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/services/compliance-services" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Compliance
                 </Link>
               </div>
@@ -83,25 +86,25 @@ const Navbar = () => {
                 <ChevronDown size={16} className="ml-1" />
               </button>
               <div className={dropdownClasses}>
-                <Link to="/industries/it" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/industries/it" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Information Technology
                 </Link>
-                <Link to="/industries/banking" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/industries/banking" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Banking & Finance
                 </Link>
-                <Link to="/industries/retail" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/industries/retail" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Retail & E-commerce
                 </Link>
-                <Link to="/industries/healthcare" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/industries/healthcare" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Healthcare
                 </Link>
-                <Link to="/industries/manufacturing" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
+                <Link href="/industries/manufacturing" className="block px-4 py-2.5 text-gray-800 hover:bg-teal-50 hover:text-teal-600 uppercase tracking-wider text-sm">
                   Manufacturing
                 </Link>
               </div>
             </div>
             <Link
-              to="/contact"
+              href="/contact"
               className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 uppercase tracking-wider text-sm"
             >
               Contact Us
@@ -124,7 +127,7 @@ const Navbar = () => {
           <div className="md:hidden bg-white shadow-lg absolute top-full left-0 w-full">
             <div className="container mx-auto px-4 py-3">
               <Link
-                to="/"
+                href="/"
                 className="block py-2 text-gray-900 hover:text-teal-600 border-b border-gray-100 font-bold uppercase tracking-wider text-sm"
                 onClick={handleLinkClick}
               >
@@ -135,13 +138,13 @@ const Navbar = () => {
               </p>
               <div className="py-2 border-b border-gray-100">
                 <div className="space-y-2">
-                  <Link to="/services/staffing" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/services/staffing" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Staffing
                   </Link>
-                  <Link to="/services/recruitment-services" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/services/recruitment-services" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Recruitment
                   </Link>
-                  <Link to="/services/compliance-services" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/services/compliance-services" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Compliance
                   </Link>
                 </div>
@@ -151,26 +154,26 @@ const Navbar = () => {
               </p>
               <div className="py-2 border-b border-gray-100">
                 <div className="space-y-2">
-                  <Link to="/industries/it" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/industries/it" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Information Technology
                   </Link>
-                  <Link to="/industries/banking" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/industries/banking" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Banking & Finance
                   </Link>
-                  <Link to="/industries/retail" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/industries/retail" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Retail & E-commerce
                   </Link>
-                  <Link to="/industries/healthcare" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/industries/healthcare" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Healthcare
                   </Link>
-                  <Link to="/industries/manufacturing" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
+                  <Link href="/industries/manufacturing" className="block text-gray-900 hover:text-teal-600 pl-4 uppercase tracking-wider text-sm" onClick={handleLinkClick}>
                     Manufacturing
                   </Link>
                 </div>
               </div>
               <div className="mt-4 mb-2">
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300 inline-block w-full text-center uppercase tracking-wider text-sm"
                   onClick={handleLinkClick}
                 >

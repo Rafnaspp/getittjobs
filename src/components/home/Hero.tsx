@@ -25,17 +25,19 @@ const Hero = () => {
             Empowering businesses through <span className="text-yellow-400 font-bold">FAST-TRACK</span> talent delivery and strategic workforce solutions—connecting exceptional talent worldwide.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 md:mb-12 relative">
+            {/* Subtle backdrop for better button visibility */}
+            <div className="absolute -inset-4 bg-black/20 backdrop-blur-sm rounded-2xl -z-10 hidden sm:block" />
             <a 
               href="/contact" 
-              className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center text-base md:text-lg uppercase tracking-wider"
+              className="w-full sm:w-auto bg-yellow-500 hover:bg-yellow-600 text-white font-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl hover:shadow-yellow-500/50 transition-all duration-300 text-center text-base md:text-lg uppercase tracking-wider border-2 border-yellow-400 relative z-10"
               aria-label="Start fast-track hiring process"
             >
               Fast-Track Hiring
             </a>
             <a 
               href="#services" 
-              className="w-full sm:w-auto bg-white hover:bg-gray-100 text-gray-900 font-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center text-base md:text-lg uppercase tracking-wider"
+              className="w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-900 font-black px-6 py-3 md:px-8 md:py-4 rounded-full shadow-2xl hover:shadow-gray-400/50 transition-all duration-300 text-center text-base md:text-lg uppercase tracking-wider border-2 border-gray-300 relative z-10"
               aria-label="View our recruitment services"
             >
               Our Services

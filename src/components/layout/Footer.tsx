@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const Footer = () => {
   const handleDownload = (url: string) => {
@@ -16,22 +16,22 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/services/staffing" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/services/staffing" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Staffing Solutions
                 </Link>
               </li>
               <li>
-                <Link to="/services/recruitment-services" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/services/recruitment-services" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Recruitment Services
                 </Link>
               </li>
               <li>
-                <Link to="/services/compliance-services" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/services/compliance-services" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Compliance Services
                 </Link>
               </li>
@@ -66,7 +66,7 @@ const Footer = () => {
                 </div>
               </li>
               <li>
-                <Link to="/contact" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/contact" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Contact
                 </Link>
               </li>
@@ -78,27 +78,27 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white mb-6">Industries</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/industries/it" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/industries/it" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Information Technology
                 </Link>
               </li>
               <li>
-                <Link to="/industries/banking" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/industries/banking" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Banking & Finance
                 </Link>
               </li>
               <li>
-                <Link to="/industries/retail" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/industries/retail" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Retail & E-commerce
                 </Link>
               </li>
               <li>
-                <Link to="/industries/healthcare" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/industries/healthcare" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Healthcare
                 </Link>
               </li>
               <li>
-                <Link to="/industries/manufacturing" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
+                <Link href="/industries/manufacturing" className="text-gray-300 hover:text-teal-400 transition-colors duration-300 inline-block">
                   Manufacturing
                 </Link>
               </li>
@@ -133,13 +133,13 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link to="/privacy-policy" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
+              <Link href="/privacy-policy" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
                 Privacy Policy
               </Link>
-              <Link to="/terms-of-service" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
+              <Link href="/terms-of-service" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
                 Terms of Service
               </Link>
-              <Link to="/disclaimer" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
+              <Link href="/disclaimer" className="text-gray-400 hover:text-teal-400 text-sm transition-colors duration-300">
                 Disclaimer
               </Link>
             </div>

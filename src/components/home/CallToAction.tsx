@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const CallToAction = () => {
   return (
@@ -23,19 +23,19 @@ const CallToAction = () => {
           
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link 
-              to="/contact" 
+              href="/contact" 
               className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center text-lg"
             >
               Start Hiring
             </Link>
             <Link 
-              to="/contact" 
+              href="/contact" 
               className="bg-white hover:bg-gray-100 text-gray-900 font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center text-lg"
             >
               Find Opportunities
             </Link>
             <Link 
-              to="/contact" 
+              href="/contact" 
               className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-center text-lg"
             >
               Schedule Consultation

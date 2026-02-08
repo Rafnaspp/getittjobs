@@ -1,6 +1,6 @@
 import React from 'react';
 import { Code, Building2, Factory, HeartPulse, Briefcase } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface CategoryProps {
   icon: React.ReactNode;
@@ -23,7 +23,7 @@ const JobCategory: React.FC<CategoryProps> = ({ icon, title, description, openin
       </div>
       <p className="text-gray-600 mb-4 text-sm sm:text-base">{description}</p>
       <Link 
-        to="/contact" 
+        href="/contact" 
         className="inline-flex items-center text-teal-600 font-bold hover:text-teal-700 transition-colors text-sm sm:text-base"
       >
         Fast-Track Application →
@@ -83,7 +83,7 @@ const JobCategories = () => {
         
         <div className="text-center mt-12">
           <Link 
-            to="/contact" 
+            href="/contact" 
             className="bg-teal-600 hover:bg-teal-700 text-white font-bold px-6 py-3 sm:px-8 sm:py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 inline-block text-sm sm:text-base uppercase tracking-wider"
           >
             Fast-Track Your Career Now

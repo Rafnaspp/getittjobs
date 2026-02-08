@@ -1,6 +1,8 @@
+'use client'
+
 import React, { useState } from 'react';
 import { FileCheck, Users, ClipboardCheck, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 const RecruitmentKit = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -46,7 +48,7 @@ const RecruitmentKit = () => {
 
                 <div className="flex justify-center">
                   <Link
-                    to="/contact"
+                    href="/contact"
                     className="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 text-center"
                   >
                     Get Free Kit
